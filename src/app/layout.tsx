@@ -21,6 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script 
+          type="text/javascript" 
+          async 
+          src="https://tenor.com/embed.js"
+        ></script>
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

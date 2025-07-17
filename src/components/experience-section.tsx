@@ -6,36 +6,28 @@ import { cn } from "@/lib/utils"
 
 const experiences = [
   {
-    company: "TechCorp Inc.",
-    position: "Senior Full Stack Developer",
-    duration: "2022 - Present",
-    description: "Leading development of scalable web applications serving 100K+ users. Architected microservices infrastructure and mentored junior developers.",
-    logo: "/company-1.jpg",
-    technologies: ["React", "Node.js", "AWS", "PostgreSQL"]
+    company: "BIT Mesra",
+    position: "App Developer - Bitotsav",
+    duration: "2025 - 2025",
+    description: "Led the development of official website of BIT Mesra for Bitotsav'25, East India's biggest cultural fest. Built QR-based ticketing system and mobile app, resolving 200+ technical issues.",
+    logo: "/bittotsav.jpg",
+    technologies: ["Next.js", "React Native", "Redux", "MongoDB"]
   },
   {
-    company: "StartupXYZ",
-    position: "Frontend Lead",
-    duration: "2020 - 2022",
-    description: "Built the entire frontend architecture from scratch. Implemented design system and improved performance by 60%.",
+    company: "BIT Mesra",
+    position: "Co-Director",
+    duration: "2023 - Present",
+    description: "Co-director of BIT Mesra, organized workshops on data structures and algorithms. Developed the official website of IEEE BIT Mesra and led various technical initiatives.",
     logo: "/company-2.jpg",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Vercel"]
+    technologies: ["Next.js", "JavaScript", "Web Development", "Leadership"]
   },
   {
-    company: "Digital Agency Co.",
-    position: "Full Stack Developer",
-    duration: "2019 - 2020",
-    description: "Developed custom solutions for enterprise clients. Collaborated with design teams to create pixel-perfect implementations.",
-    logo: "/company-3.jpg",
-    technologies: ["Vue.js", "Python", "Django", "Docker"]
-  },
-  {
-    company: "FreelanceWork",
-    position: "Independent Developer",
-    duration: "2018 - 2019",
-    description: "Worked with various clients on web development projects. Gained experience in project management and client relations.",
-    logo: "/company-4.jpg",
-    technologies: ["WordPress", "PHP", "JavaScript", "MySQL"]
+    company: "Independent Developer",
+    position: "Freelance Full Stack Developer",
+    duration: "2022 - 2023",
+    description: "Worked with multiple clients as an independent developer. Focused on upskilling and learning new technologies while delivering custom web solutions.",
+    logo: "/Profile.png",
+    technologies: ["React", "Node.js", "MongoDB", "Full Stack Development"]
   }
 ]
 
@@ -74,31 +66,38 @@ function ExperienceCard({ experience, index }: { experience: typeof experiences[
 
       {/* Content */}
       <div className="flex-1 pb-12">
-        <div className="rounded-2xl border border-border bg-card p-6 group-hover:bg-accent/50 transition-all duration-300 hover:shadow-lg">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-              {experience.position}
-            </h3>
-            <span className="text-sm font-medium text-muted-foreground bg-secondary px-3 py-1 rounded-full">
-              {experience.duration}
-            </span>
-          </div>
+        <div className="relative rounded-2xl border border-border bg-card p-6 group-hover:bg-accent/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
           
-          <p className="text-foreground font-medium mb-3">{experience.company}</p>
+          {/* Simple Hover Overlay */}
+          <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
           
-          <p className="text-muted-foreground mb-4 leading-relaxed">
-            {experience.description}
-          </p>
-          
-          <div className="flex flex-wrap gap-2">
-            {experience.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="px-2 py-1 text-xs font-medium rounded bg-primary/10 text-primary"
-              >
-                {tech}
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                {experience.position}
+              </h3>
+              <span className="text-sm font-medium text-muted-foreground bg-secondary px-3 py-1 rounded-full group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                {experience.duration}
               </span>
-            ))}
+            </div>
+            
+            <p className="text-foreground font-medium mb-3 group-hover:text-primary/80 transition-colors">{experience.company}</p>
+            
+            <p className="text-muted-foreground mb-4 leading-relaxed group-hover:text-foreground/70 transition-colors">
+              {experience.description}
+            </p>
+            
+            <div className="flex flex-wrap gap-2">
+              {experience.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2 py-1 text-xs font-medium rounded bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -108,7 +107,7 @@ function ExperienceCard({ experience, index }: { experience: typeof experiences[
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 lg:py-32">
+    <section id="experience" className="py-24 lg:py-32 bg-gradient-to-br from-cyan-50/40 to-sky-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

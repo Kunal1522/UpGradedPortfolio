@@ -5,9 +5,9 @@ import { Github, Linkedin, Twitter, Heart } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const socialLinks = [
-  { name: "GitHub", href: "#", icon: Github },
-  { name: "LinkedIn", href: "#", icon: Linkedin },
-  { name: "Twitter", href: "#", icon: Twitter },
+  { name: "GitHub", href: "https://github.com/Kunal1522", icon: Github },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/kunalkashyapofficial/", icon: Linkedin },
+  { name: "Twitter", href: "https://x.com/Kashy53717Kunal", icon: Twitter },
 ]
 
 const navigation = [
@@ -40,6 +40,8 @@ export function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     "w-10 h-10 rounded-lg border border-border bg-background",
                     "flex items-center justify-center text-muted-foreground",
@@ -76,10 +78,10 @@ export function Footer() {
             <h4 className="font-medium text-foreground">Get in Touch</h4>
             <div className="space-y-2">
               <a
-                href="mailto:kunal@example.com"
+                href="mailto:kunalkashyap8024@gmail.com"  
                 className="block text-muted-foreground hover:text-primary transition-colors"
               >
-                kunal@example.com
+                kunalkashyap8024@gmail.com
               </a>
               <p className="text-muted-foreground">
                 Available for freelance and full-time opportunities

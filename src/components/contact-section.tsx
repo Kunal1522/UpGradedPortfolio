@@ -9,15 +9,8 @@ const contactMethods = [
     icon: Mail,
     title: "Email Me",
     description: "Drop me a line and I'll get back to you within 24 hours",
-    action: "kunal@example.com",
-    href: "mailto:kunal@example.com"
-  },
-  {
-    icon: MessageCircle,
-    title: "Let's Chat",
-    description: "Schedule a quick call to discuss your project",
-    action: "Schedule Call",
-    href: "#"
+    action: "kunalkashyap8024@gmail.com",
+    href: "mailto:kunalkashyap8024@gmail.com"
   },
   {
     icon: Calendar,
@@ -30,7 +23,7 @@ const contactMethods = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-muted/30">
+    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-br from-sky-50/50 to-cyan-50/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -59,38 +52,41 @@ export function ContactSection() {
           >
             <h3 className="text-2xl font-semibold text-foreground mb-8">Get In Touch</h3>
             
-            {contactMethods.map((method, index) => (
-              <motion.a
-                key={method.title}
-                href={method.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                viewport={{ once: true }}
-                className={cn(
-                  "group flex items-start gap-4 p-6 rounded-2xl border border-border bg-card",
-                  "hover:bg-accent hover:shadow-lg transition-all duration-300",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                )}
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <method.icon className="h-5 w-5" />
-                </div>
-                
-                <div className="flex-1">
-                  <h4 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {method.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-                    {method.description}
-                  </p>
-                  <div className="flex items-center text-sm font-medium text-primary group-hover:text-primary transition-colors">
-                    <span>{method.action}</span>
-                    <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+            <div className="space-y-4">
+              {contactMethods.map((method, index) => (
+                <motion.a
+                  key={method.title}
+                  href={method.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={cn(
+                    "group flex items-start gap-4 p-6 rounded-2xl",
+                    "border border-black/20 dark:border-white/20 bg-black/10 dark:bg-white/20 backdrop-blur-md",
+                    "hover:bg-black/20 dark:hover:bg-white/30 hover:shadow-lg transition-all duration-300",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  )}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <method.icon className="h-5 w-5" />
                   </div>
-                </div>
-              </motion.a>
-            ))}
+                  
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                      {method.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                      {method.description}
+                    </p>
+                    <div className="flex items-center text-sm font-medium text-primary group-hover:text-primary transition-colors">
+                      <span>{method.action}</span>
+                      <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -100,7 +96,7 @@ export function ContactSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="rounded-2xl border border-black/20 dark:border-white/20 bg-black/10 dark:bg-white/20 backdrop-blur-md p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-6">Send a Message</h3>
               
               <form className="space-y-6">
@@ -113,8 +109,9 @@ export function ContactSection() {
                       type="text"
                       id="firstName"
                       className={cn(
-                        "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground",
-                        "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+                        "w-full px-4 py-3 rounded-lg border border-black/20 dark:border-white/20",
+                        "bg-black/5 dark:bg-white/10 backdrop-blur-md text-foreground",
+                        "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50",
                         "placeholder-muted-foreground transition-colors"
                       )}
                       placeholder="John"
@@ -128,8 +125,9 @@ export function ContactSection() {
                       type="text"
                       id="lastName"
                       className={cn(
-                        "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground",
-                        "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+                        "w-full px-4 py-3 rounded-lg border border-black/20 dark:border-white/20",
+                        "bg-black/5 dark:bg-white/10 backdrop-blur-md text-foreground",
+                        "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50",
                         "placeholder-muted-foreground transition-colors"
                       )}
                       placeholder="Doe"
@@ -145,8 +143,9 @@ export function ContactSection() {
                     type="email"
                     id="email"
                     className={cn(
-                      "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground",
-                      "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+                      "w-full px-4 py-3 rounded-lg border border-black/20 dark:border-white/20",
+                      "bg-black/5 dark:bg-white/10 backdrop-blur-md text-foreground",
+                      "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50",
                       "placeholder-muted-foreground transition-colors"
                     )}
                     placeholder="john@example.com"
@@ -161,8 +160,9 @@ export function ContactSection() {
                     type="text"
                     id="subject"
                     className={cn(
-                      "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground",
-                      "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+                      "w-full px-4 py-3 rounded-lg border border-black/20 dark:border-white/20",
+                      "bg-black/5 dark:bg-white/10 backdrop-blur-md text-foreground",
+                      "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50",
                       "placeholder-muted-foreground transition-colors"
                     )}
                     placeholder="Let's work together"
@@ -177,8 +177,9 @@ export function ContactSection() {
                     id="message"
                     rows={4}
                     className={cn(
-                      "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground",
-                      "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+                      "w-full px-4 py-3 rounded-lg border border-black/20 dark:border-white/20",
+                      "bg-black/5 dark:bg-white/10 backdrop-blur-md text-foreground",
+                      "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50",
                       "placeholder-muted-foreground transition-colors resize-none"
                     )}
                     placeholder="Tell me about your project..."
@@ -189,9 +190,10 @@ export function ContactSection() {
                   type="submit"
                   className={cn(
                     "w-full group relative inline-flex items-center justify-center rounded-lg",
-                    "bg-primary text-primary-foreground px-6 py-3",
+                    "bg-black/60 dark:bg-white/40 backdrop-blur-md border border-black/30 dark:border-white/30",
+                    "text-white dark:text-black px-6 py-3",
                     "font-medium transition-all duration-200",
-                    "hover:bg-primary/90 hover:scale-105",
+                    "hover:bg-black/80 dark:hover:bg-white/60 hover:scale-105",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     "shadow-lg hover:shadow-xl"
                   )}
