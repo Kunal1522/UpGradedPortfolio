@@ -23,12 +23,6 @@ export function Navigation() {
   const navHeight = useTransform(scrollY, [0, 100], ["4rem", "3.5rem"])
   const borderRadius = useTransform(scrollY, [0, 100], ["0px", "16px"])
   const marginTop = useTransform(scrollY, [0, 100], ["0px", "12px"])
-  const navBackground = useTransform(
-    scrollY,
-    [0, 100],
-    ["rgba(var(--background), 0.8)", "rgba(var(--background), 0.95)"]
-  )
-  const borderOpacity = useTransform(scrollY, [0, 100], [0.2, 0.6])
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
